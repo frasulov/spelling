@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}- home{% endblock %}
+
+{% block pagecontent %}
+    <style>
+        .d-none{display: none !important;}
+    </style>
+
+<section>
+		<div class="data">
+			<div class="left textarea">
+				<textarea id="in" placeholder="Mətninizi bura yazın..."></textarea>
+				<span id="count-data-left" class="count-data-style">0 söz, 0 simvol</span>
+			</div>
+			<input id="hidden_input_value" type="text" style="display: none;" value="Azerbaycan">
+			<div class="right textarea">
+                <span id="processed_text">
+
+                </span>
+				<span id="count-data-right" class="count-data-style">0 söz, 0 simvol</span>
+				<span id="copy">
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M22.2222 0H8.95585C8.01036 0 7.24121 0.7692 7.24121 1.71464V5.73903H8.80643V1.71464C8.80643 1.63226 8.87347 1.56522 8.95585 1.56522H22.2222C22.3046 1.56522 22.3716 1.63226 22.3716 1.71464V14.981C22.3716 15.0634 22.3046 15.1305 22.2222 15.1305H18.3233V16.6957H22.2222C23.1677 16.6957 23.9369 15.9265 23.9369 14.981V1.71464C23.9368 0.7692 23.1677 0 22.2222 0Z" fill="black"/>
+					<path d="M15.0435 7.30424H1.7772C0.8317 7.30424 0.0625 8.07345 0.0625 9.01894V22.2853C0.0625522 23.2308 0.8317 24 1.7772 24H15.0436C15.9891 24 16.7583 23.2308 16.7583 22.2854V9.01894C16.7583 8.07345 15.989 7.30424 15.0435 7.30424ZM15.0436 22.4348H1.7772C1.69476 22.4348 1.62772 22.3677 1.62772 22.2854V9.01894C1.62772 8.93651 1.69476 8.86946 1.7772 8.86946H15.0436C15.126 8.86946 15.193 8.93651 15.193 9.01894V22.2854H15.1931C15.1931 22.3677 15.126 22.4348 15.0436 22.4348Z" fill="black"/>
+					</svg>
+				</span>
+			</div>
+
+		</div>
+		<button id="submit-form" class="submit_btn">Göndər</button>
+		
+</section>
+
+<section class="stat_section d-none">
+
+		<div class="statistics">
+			<h2>Statistika</h2>
+			<div class="stat_div">
+				<span style="min-width: 100px;">Ümumi xəta</span>
+				<b id="error" style="min-width: 30px;text-align: center;">3</b>
+				<span></span>
+			</div>
+
+			<div class="stat_div" id="div_error_percentage">
+				<span style="min-width: 100px;">Xəta faizi</span>
+				<b id="error_percentage" style="min-width: 30px;">50%</b>
+				<span></span>
+			</div>
+
+				<br>
+
+			    <label class="models-label" for="norwig">
+				<input type="radio" class="models-input" id="norwig" name="model">
+				    “Norwig” modeli
+			    </label>
+
+			    <label class="models-label" for="deeplearning">
+				<input type="radio" class="models-input" id="deeplearning" name="model">
+				    “Deep Learning” modeli
+			    </label>
+
+			    <label class="models-label" for="another">
+					<input type="radio" class="models-input" id="another" name="model">
+				    “Another” modeli
+			    </label>
+		</div>
+
+		<div class="image">
+			<img src="{% static 'images/statistics.gif' %}">
+		</div>
+
+
+</section>
+
+{% endblock %}
